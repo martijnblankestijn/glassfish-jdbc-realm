@@ -55,6 +55,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <scm>
+        <developerConnection>scm:git:git@github.com:martijnblankestijn/glassfish-jdbc-realm.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>deployment</id>
