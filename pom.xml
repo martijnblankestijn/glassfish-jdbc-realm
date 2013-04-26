@@ -20,14 +20,13 @@
 
         Product information: http://docs.oracle.com/cd/E18930_01/html/821-2418/beabo.html
         Use
-        asadmin deploy --type osgi
-        /home/martijn/workspaces/zonnepanelen/inverter-hub/glassfish-jdbc-realm/target/glassfish-jdbc-realm-1.0.2-SNAPSHOT.jar
+        asadmin deploy --type osgi target/glassfish-jdbc-realm-1.0.2-SNAPSHOT.jar
 
 
         asadmin create-auth-realm --classname nl.mb.glassfish.realm.CustomJdbcUserRealm --property
         jaas-context=customJdbcRealm customJdbcRealm
 
-        Toevoegen aan glassfish/domains/domain1/config/login.conf
+        Add t0 glassfish/domains/domain1/config/login.conf
         Uit: https://blogs.oracle.com/nithya/entry/groups_in_custom_realms
         ----------------------------------------------------------
         $GF-ROOT/domains/domain1/config/login.conf
@@ -133,15 +132,15 @@
                     </instructions>
                 </configuration>
             </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.3.2</version>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-            </configuration>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
