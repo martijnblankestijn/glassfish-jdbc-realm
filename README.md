@@ -12,11 +12,15 @@ I noticed that the JDBC realm supplied by glassfish was not working anymore.
 ## Installation
 The jar-file, which containts the Realm, can be installed with the asadmin utility. 
 
-```asadmin deploy --force --type osgi glassfish-jdbc-realm-1.0.jar```
+```
+asadmin deploy --force --type osgi glassfish-jdbc-realm-1.0.jar
+```
 
 Next a line should be added to the login-config file of Glassfish (location $GLASSFISH_HOME/glassfish/domains/${DOMAIN}/config/login.conf)
 
-```CustomJdbcUserRealm { nl.mb.glassfish.realm.CustomJdbcLoginModule required; };```
+```
+CustomJdbcUserRealm { nl.mb.glassfish.realm.CustomJdbcLoginModule required; };
+```
 
 For the JDBC-realm to function a DataSource needs to be configured. See https://glassfish.java.net/docs/4.0/administration-guide.pdf for details.
 
@@ -24,7 +28,8 @@ Example configuration for a Apache Derby database through asadmin scripting is b
 
 Note about Glassfish scripting, if you want to escape the space character, to this with '\ '. The equals symbol can be escaped with '\\='
 
-```create-jdbc-connection-pool --datasourceclassname org.apache.derby.jdbc.ClientDataSource --restype=javax.sql.DataSource  --property User=APP:Password=SECRET:dataBaseName=user:serverName=localhost:portNumber=1527:connectionAttributes=\;create\\=true userDs
+```
+create-jdbc-connection-pool --datasourceclassname org.apache.derby.jdbc.ClientDataSource --restype=javax.sql.DataSource  --property User=APP:Password=SECRET:dataBaseName=user:serverName=localhost:portNumber=1527:connectionAttributes=\;create\\=true userDs
 create-jdbc-resource --connectionpoolid userDs jdbc/userDs
 ```
 

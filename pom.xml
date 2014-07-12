@@ -47,7 +47,7 @@
     </description>
 
     <properties>
-        <glassfish.version>4.0-b85</glassfish.version>
+        <glassfish.version>4.0</glassfish.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -69,14 +69,6 @@
             <url>http://192.168.1.200:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
-
-    <repositories>
-        <repository>
-            <id>promoted</id>
-            <url>https://maven.java.net/content/groups/promoted</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
