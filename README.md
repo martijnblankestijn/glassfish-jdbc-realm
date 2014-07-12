@@ -7,6 +7,10 @@ Security Realm for Glassfish 4.
 During the development of a presentation of the introduction of Java EE 7, 
 I noticed that the JDBC realm supplied by glassfish was not working anymore.
  
+Inspired by:
+
+* http://blog.eisele.net/2013/01/jdbc-realm-glassfish312-primefaces342.html
+* http://stackoverflow.com/questions/4526674/custom-glassfish-security-realm-does-not-work-unable-to-find-loginmodule
 
 
 ## Installation
@@ -17,6 +21,7 @@ asadmin deploy --force --type osgi glassfish-jdbc-realm-1.0.jar
 ```
 
 Next a line should be added to the login-config file of Glassfish (location $GLASSFISH_HOME/glassfish/domains/${DOMAIN}/config/login.conf)
+It should be possible with Glassfish CLI from 4.0.1: see https://java.net/jira/browse/GLASSFISH-4757, but for now, just add it to the login.conf.
 
 ```
 CustomJdbcUserRealm { nl.mb.glassfish.realm.CustomJdbcLoginModule required; };
