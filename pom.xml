@@ -38,11 +38,24 @@
     <developer>
       <name>Martijn Blankestijn</name>
       <email>martijnblankestijn@gmail.com</email>
-      <roles>
+        <roles>
         <role>developer</role>
       </roles>
     </developer>
   </developers>
+
+  <distributionManagement>
+    <repository>
+      <id>deployment</id>
+      <name>Internal Releases</name>
+      <url>http://192.168.1.200:8081/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>deployment</id>
+      <name>Internal Releases</name>
+      <url>http://192.168.1.200:8081/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
