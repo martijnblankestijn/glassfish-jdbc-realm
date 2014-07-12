@@ -70,6 +70,7 @@
         </snapshotRepository>
     </distributionManagement>
 
+
     <repositories>
         <repository>
             <id>promoted</id>
@@ -113,7 +114,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <!-- This MUST be the package in wich the login module and Realm is -->
+                        <!-- This MUST be the package in which the login module and Realm is -->
                         <Export-Package>
                             nl.mb.glassfish.realm;version=${project.version}
                         </Export-Package>
@@ -122,6 +123,7 @@
                             javax.security.auth.login,
                             javax.sql,
                             com.sun.appserv.security,
+                            com.sun.enterprise.security,
                             com.sun.enterprise.security.auth.realm,
                             org.jvnet.hk2.annotations,
                             sun.misc,
