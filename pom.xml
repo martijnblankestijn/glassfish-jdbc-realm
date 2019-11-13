@@ -105,7 +105,7 @@
               com.sun.enterprise.security,
               com.sun.enterprise.security.auth.realm,
               org.jvnet.hk2.annotations,
-              sun.misc,
+              java.util,
               com.sun.enterprise.util.i18n
             </Import-Package>
           </instructions>
