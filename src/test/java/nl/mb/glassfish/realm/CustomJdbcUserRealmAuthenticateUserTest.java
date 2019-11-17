@@ -6,7 +6,7 @@ import com.sun.enterprise.security.auth.realm.NoSuchRealmException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
 import javax.naming.Context;
 import javax.naming.NameNotFoundException;
@@ -95,7 +95,7 @@ public class CustomJdbcUserRealmAuthenticateUserTest {
     MessageDigest md = MessageDigest.getInstance("SHA-256");
     md.reset();
     byte[] digest = md.digest(PASSWORD.getBytes(Charset.defaultCharset()));
-    String encodedDigest = new BASE64Encoder().encode(digest);
+    String encodedDigest = Base64.getEncoder().encodeToString(digest);
 
     when(resultSet.getString(eq(1))).thenReturn(encodedDigest,"USER", "ADMIN");
 

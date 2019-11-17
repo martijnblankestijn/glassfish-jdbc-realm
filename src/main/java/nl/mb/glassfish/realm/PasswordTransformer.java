@@ -1,8 +1,6 @@
 package nl.mb.glassfish.realm;
 
-import sun.misc.BASE64Encoder;
-import sun.misc.CharacterEncoder;
-import sun.misc.HexDumpEncoder;
+import java.util.Base64;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
@@ -91,10 +89,10 @@ interface Encoder {
 }
 
 class Base64Encoder implements Encoder {
-  private BASE64Encoder encoder = new BASE64Encoder();
+  private Base64.Encoder encoder = Base64.getEncoder();
 
   @Override public String encode(final byte[] b) {
-    return encoder.encode(b);
+    return encoder.encodeToString(b);
   }
 }
 
