@@ -1,0 +1,27 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11.0.4-stretch
+
+    environment:
+      GIT_COMMITTER_NAME: CIRCLECI
+      GIT_COMMITTER_EMAIL: martijnblankestijn@gmail.com
+
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command:  |
+            mvn clean package
+
+workflows:
+  version: 2
+
+  build_and_test:
+    jobs:
+      - build
